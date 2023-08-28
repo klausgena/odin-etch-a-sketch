@@ -45,3 +45,11 @@ gridDivs.forEach(gridDiv => gridDiv.addEventListener(
         }
     })
 );
+// Prevent draggin while 
+// moving mouse with left mouse button pressed.
+gridDivs.forEach(gridDiv => gridDiv.addEventListener(
+        "dragstart", function (e) {
+            e.preventDefault();
+        }
+    )
+);

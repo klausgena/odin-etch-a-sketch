@@ -40,7 +40,7 @@ makeGrid(16, "grid");
 const gridDivs = document.querySelectorAll("div.grid");
 gridDivs.forEach(gridDiv => gridDiv.addEventListener(
     'mousemove', function (e) {
-        if (e.button == 0){ // werkt niet
+        if (e.buttons == 1) {
             gridDiv.classList.add("trace");
         }
     })

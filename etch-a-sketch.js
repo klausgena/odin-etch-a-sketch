@@ -22,6 +22,12 @@ function makeRow (numberRows, CSSClass) {
 
 function makeGrid (numberRows, CSSClass) {
     const container = document.getElementById("container");
+    // First delete old grid, if any.
+    if (container.hasChildNodes) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    }
     let counter = 0;
     while (counter < numberRows) {
         myRow = makeRow(numberRows, CSSClass);
@@ -31,11 +37,25 @@ function makeGrid (numberRows, CSSClass) {
     }
 }
 
+function getGridValue () {
+    const range = document.getElementById("myRange");
+    return value = range.value;
+}
+
 // Create the grid
 
-makeGrid(16, "grid");
+makeGrid(getGridValue(), "grid");
 
-// Event handlers
+// Create new grid on slider changes
+
+const slider = document.getElementById("myRange");
+slider.addEventListener(
+    "change", function () {
+        makeGrid(getGridValue(), "grid");
+    }
+);
+
+// Drawing event handlers
 
 const gridDivs = document.querySelectorAll("div.grid");
 gridDivs.forEach(gridDiv => gridDiv.addEventListener(
@@ -45,8 +65,7 @@ gridDivs.forEach(gridDiv => gridDiv.addEventListener(
         }
     })
 );
-// Prevent draggin while 
-// moving mouse with left mouse button pressed.
+// Prevent dragging action
 gridDivs.forEach(gridDiv => gridDiv.addEventListener(
         "dragstart", function (e) {
             e.preventDefault();

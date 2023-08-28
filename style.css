@@ -1,0 +1,27 @@
+/* GRID */
+
+#container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 720px;
+    height: 720px;
+}
+
+[id^="Row"] {
+    width: 720px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.grid {
+    width: 100%;
+    border: 1px dotted black;
+    margin: 0;
+}
+
+/* ON ACTION */
+
+.trace {
+    background-color: grey;
+}

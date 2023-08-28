@@ -1,0 +1,1 @@
+Another ODIN PROJECT exercise to learn how to manipulate the DOM and mouse events.

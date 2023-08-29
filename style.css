@@ -3,6 +3,9 @@
 #menu {
     margin: auto;
     width: 720px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* GRID */
